@@ -16,7 +16,7 @@ int main()
 {
     float x=2,x2;
     int i=0;
-    int e=0;
+    float e;
    do{
 
        x2=x-(f(x)/fp(x));
@@ -24,11 +24,8 @@ int main()
        e=x-x2;
        x=x2;
        i++;
-       if(e>0.0001||e<-0.0001){
-           break;
-       }
 
-    }while(1);
+    }while(e>0.0001||e<-0.0001);
 printf("The value is : %f \n",x);
 
 }

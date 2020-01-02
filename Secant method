@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+
+float f(float a){
+    float fun=(a*a*a)-4;
+    return fun;
+}
+
+int main()
+{
+    float a=1,b=2;
+    float x;
+    int i=0;
+    float se=0;
+   do{
+
+    float fa,fb,fc;
+    fa=f(a);
+    fb=f(b);
+    se=((fb*a)-(fa*b))/(fb-fa);
+    i++;
+    printf("In itiration %d c is :%f\n",i,se);
+
+    a=b;
+    float temp=b;
+    b=se;
+    x=(fabs(se-temp)/se)>0.001;
+    }while(x>0.005);
+printf("The value is : %f \n",se);
+
+}

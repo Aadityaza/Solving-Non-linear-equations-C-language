@@ -1,0 +1,36 @@
+
+
+    #include<stdio.h>
+#include<math.h>
+
+float f(float a){
+    float fun=cos(a)-(a)*exp(a);
+    return fun;
+}
+
+int main()
+{
+    float a=1,b=2;
+    float c,x;
+    int i=0;
+    float e;
+   do{
+    float fa,fb,fc;
+    e=a;
+    fa=f(a);
+    fb=f(b);
+    c=(a-((fa)*(b-a))/(fb-fa));
+    fc=f(c);
+    printf("In itiration %d c is :%f\n",i,c);
+    i++;
+    if((fa*fc)<0){
+        b=c;
+    }
+    else{
+        a=c;
+    }
+     x=(a-e);
+    }while(x>0.0001||x<-0.0001);
+printf("The value is : %f \n",c);
+
+}
